@@ -23,7 +23,9 @@ function setup() {
 	bL2 = new DL(width-250,height-70,20,100);
 	bL3 = new DL(width-165,height-20,190,20);
 
-	paper = new Paper(100, 693, 25);
+	paper = new Paper(100, 693, 15);
+	
+	console.log(paper.body.position.x)
 
 	keyPressed();
 
@@ -47,8 +49,8 @@ function draw() {
 }
 
 function keyPressed(){
-	if(keyCode === UP_ARROW && paper.body.position.x === 100){
-		Matter.Body.applyForce(paper.body, paper.body.position, {x:85, y:-100});
+	if(keyCode === UP_ARROW && paper.body.position.x <= 100){
+		Matter.Body.applyForce(paper.body, paper.body.position, {x:85, y:-85});
 	}
 }
 
